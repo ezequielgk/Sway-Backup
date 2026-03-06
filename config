@@ -1,0 +1,28 @@
+# ~/.config/sway/config
+
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $term foot
+set $rofi_cmd rofi -terminal '$term'
+set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+
+# ============================================
+# CARGA DE MÓDULOS
+# ============================================
+include ~/.config/sway/conf.d/appearance.conf
+include ~/.config/sway/conf.d/keybinds.conf
+include ~/.config/sway/conf.d/workspaces.conf
+include ~/.config/sway/conf.d/windows.conf
+include ~/.config/sway/conf.d/input.conf
+include ~/.config/sway/conf.d/output.conf
+include ~/.config/sway/conf.d/autostart.conf
+include ~/.config/sway/colors.conf
+include ~/.config/sway/noctalia
+
+include '$(/usr/libexec/sway/layered-include "}/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
+
+
+
